@@ -26,6 +26,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompareListController;
+use App\Http\Controllers\SocialiteController;
 
 // Admin routes
 Route::group(['prefix'=>'admin'],function(){
@@ -242,6 +243,12 @@ Route::group(['prefix'=>'customer'],function(){
 	Route::post('/profile',[ProfileController::class, 'profile_update'])->name('customer.profile_update');
 	Route::post('/track_order',[ProfileController::class, 'track_order'])->name('customer.track_order');
 });
+
+Route::get('/auth/redirect',[SocialiteController::class,'googleLogin'])->name('google.login');
+Route::get('/auth/callback',[SocialiteController::class,'callback'])->name('social.callback');
+
+Route::get('/auth/facebook/redirect',[SocialiteController::class,'facebookLogin'])->name('facebook.login');
+Route::get('/auth/facebook/callback',[SocialiteController::class,'facebook_callback'])->name('social.facebook.callback');
 
 
 

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\Auth\SocialiteController;
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\EcommerceController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Api\CheckoutController;
 Route::group(['prefix' => 'auth'], function ($router) {
 
    Route::post('login', [AuthController::class, "login"]);
+   Route::post('social_login', [SocialiteController::class, "social_login"]);
    Route::post('register',[RegisterController::class, "register"]);
    Route::post('logout', [AuthController::class, "logout"]);
     //Route::post('refresh', 'AuthController@refresh');

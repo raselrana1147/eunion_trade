@@ -6,6 +6,11 @@
         <!-- Sign-in -->      
 <div class="col-md-6 col-sm-6 sign-in">
   <h4 class="">Sign in</h4>
+  <div class="social-sign-in outer-top-xs">
+    <a href="{{ route('google.login') }}" class="btn-upper btn btn-primary checkout-page-button"><i class="fa fa-google"></i> Sign In with Google</a>
+    <a href="{{ route('facebook.login') }}" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
+   
+  </div>
   <form class="register-form outer-top-xs" action="{{ route('login') }}" method="post" role="form" >
     @csrf
     <div class="form-group">
@@ -17,6 +22,7 @@
         <input type="password" class="form-control unicase-form-control text-input" name="password">
     </div>
       <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
+      
   </form>         
 </div>
 <!-- Sign-in -->

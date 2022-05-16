@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('phone')->unique()->nullable();
             $table->string('refer_id')->nullable();
             $table->string('placement_hand')->nullable();
             $table->string('placement_id')->nullable();
@@ -28,6 +28,10 @@ class CreateUsersTable extends Migration
             $table->text('address')->nullable();
             $table->enum('user_type',['free','premium'])->default('free');
             $table->enum('gender',['Male','Female','Other'])->nullable();
+            $table->text('google_token')->nullable();
+            $table->string('google_id')->nullable();
+            $table->text('facebook_token')->nullable();
+            $table->string('facebook_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
